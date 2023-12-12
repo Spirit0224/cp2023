@@ -142,10 +142,31 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='Brython.html'>Next</a> >> Brython<br /><h1>About</h1>
-<p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite </a></p>
-<p></p>
-<br /> <a href='Brython.html'>Next</a> >> Brython</div>
+    <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='W13.html'>Next</a> >> W13<br /><h1>W7</h1>
+<p>// https://en.wikipedia.org/wiki/Flag_of_the_United_States<br/>// https://www.britannica.com/topic/flag-of-the-United-States-of-America<br/>// 隞乩�讠�箏嗾銋舘�蝜芾ˊ摰峕�鞟�蝢𤾸�见�𧢲��, 隢衤耨�㺿銝见�堒�笔�讠Ⅳ, 隞文�嗥鼓�枂甇�Ⅱ��蝢𤾸�见�𧢲��<br/>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;<br/>#include &lt;math.h&gt;</p>
+<p>void draw_usa_flag(gdImagePtr img);<br/>void draw_star(gdImagePtr img, int x, int y, int size, int color);</p>
+<p>int main() {<br/> int width = 800;<br/> int height = (int)(width / 1.9);</p>
+<p>gdImagePtr img = gdImageCreateTrueColor(width, height);<br/> gdImageAlphaBlending(img, 0);</p>
+<p>draw_usa_flag(img);</p>
+<p>FILE *outputFile = fopen("./../images/usa_flag.png", "wb");<br/> if (outputFile == NULL) {<br/> fprintf(stderr, "Error opening the output file.\n");<br/> return 1;<br/> }</p>
+<p>gdImagePngEx(img, outputFile, 9);<br/> fclose(outputFile);<br/> gdImageDestroy(img);</p>
+<p>return 0;<br/>}</p>
+<p>void draw_usa_flag(gdImagePtr img) {<br/> int width = gdImageSX(img);<br/> int height = gdImageSY(img);<br/> int red, white, blue;<br/> // Colors for the flag<br/> red = gdImageColorAllocate(img, 178, 34, 52); // Red stripes<br/> white = gdImageColorAllocate(img, 255, 255, 255); // White stripes<br/> blue = gdImageColorAllocate(img, 60, 59, 110); // Blue field</p>
+<p>int stripe_height = height / 13;<br/> int stripe_width = width;<br/> int star_size = (int)(0.0308 * height); // Corrected star size (half the original size)</p>
+<p>for (int y = 0; y &lt; height; y += stripe_height) {<br/> if (y / stripe_height % 2 == 0) {<br/> gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, red);<br/> } else {<br/> gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, white);<br/> }<br/> }</p>
+<p>gdImageFilledRectangle(img, 0, 0, width * 2 / 5, stripe_height * 7, blue);</p>
+<p>int star_spacing_x = (int)(0.063 * height); // Horizontal spacing between stars<br/> int star_spacing_y = (int)(0.054 * height); // Vertical spacing between stars<br/> int star_start_x = (int)(0.0616 * height); // Starting X position for stars<br/> int star_start_y = (int)(0.0485 * height); // Starting Y position for stars</p>
+<p>for (int row = 0; row &lt; 9; row++) {<br/> int starsPerRow = (row % 2 == 0) ? 6 : 5;</p>
+<p>for (int star = 0; star &lt; starsPerRow; star++) {<br/> int x = star_start_x + star * star_spacing_x;<br/> int y = star_start_y + row * star_spacing_y;<br/> draw_star(img, x, y, star_size, white);<br/> }<br/> }<br/>}</p>
+<p>void draw_star(gdImagePtr img, int x, int y, int size, int color) {<br/> gdPoint points[10];</p>
+<p>for (int i = 0; i &lt; 10; i++) {<br/> double angle = M_PI / 2 + i * 2 * M_PI / 10;<br/> int radius = (i % 2 == 0) ? size : size / 2;<br/> points[i].x = x + radius * cos(angle);<br/> points[i].y = y + radius * sin(angle);<br/> }</p>
+<p>// Fill the star with white color<br/> gdImageFilledPolygon(img, points, 10, color);<br/>}</p>
+<p><img alt="" src="./../images/index.html"/></p>
+</div>
+</div>
+<p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
+<div id="brython_div2">
+<br />W6 << <a href='W6.html'>Previous</a> <a href='W13.html'>Next</a> >> W13</div>
         
     <!-- footer -->
       <div class="container">
