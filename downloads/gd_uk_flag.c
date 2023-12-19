@@ -3,7 +3,6 @@
 #include <math.h>
 
 void draw_uk_flag(gdImagePtr img);
-void draw_red_sun(gdImagePtr img, int x, int y, int size, int color);
 #include <stdio.h>
 
 int main() {
