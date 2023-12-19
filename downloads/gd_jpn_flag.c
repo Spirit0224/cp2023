@@ -3,33 +3,46 @@
 #include <math.h>
 
 void draw_japan_flag(gdImagePtr img);
-void draw_red_sun(gdImagePtr img, int x, int y, int size, int color);
+void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red );
 
 int main() {
-    int height = 10; // 国旗的高度
-    int width = 20; // 国旗的宽度
+    // width 3: height 2
+    int width = 1200;
+    int height = 2 * width / 3;
 
-    // 循环打印国旗
-    for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
-            if (i < height / 2) {
-                // 上半部分，红白红条纹
-                if (j % 2 == 0) {
-                    printf("\033[0;31m*\033[0m"); // 使用*代表红色
-                } else {
-                    printf("\033[0;37m*\033[0m"); // 使用*代表白色
-                }
-            } else {
-                // 下半部分，白蓝白条纹
-                if (j % 2 == 0) {
-                    printf("\033[0;37m*\033[0m"); // 使用*代表白色
-                } else {
-                    printf("\033[0;34m*\033[0m"); // 使用*代表蓝色
-                }
-            }
-        }
-        printf("\n"); // 换行
+    gdImagePtr img = gdImageCreateTrueColor(width, height);
+    gdImageAlphaBlending(img, 0);
+
+    draw_japan_flag(img);
+
+    FILE *outputFile = fopen("./../images/japan_flag.png", "wb");
+    if (outputFile == NULL) {
+        fprintf(stderr, "Error opening the output file.\n");
+        return 1;
     }
-
+    gdImagePngEx(img, outputFile, 9);
+    fclose(outputFile);
+    gdImageDestroy(img);
     return 0;
+}
+
+void draw_japan_flag(gdImagePtr img) {
+    int width = gdImageSX(img);
+    int height = gdImageSY(img);
+    int red, white ;
+    int center_x =  0.5 * width;
+    int center_y =  0.5 * height;
+    int sun_radius = 145 ;
+
+    // Colors for the flag
+    red = gdImageColorAllocate(img, 242, 0, 0); // Red color
+    white = gdImageColorAllocate(img, 255, 255, 255); // White stripes
+
+
+    // 繪製白色矩形區域
+    gdImageFilledRectangle(img, 0, 0, width, height, white);
+
+
+    // 繪製太陽內部
+    gdImageFilledEllipse(img, center_x, center_y, sun_radius * 3, sun_radius * 3, red);
 }
