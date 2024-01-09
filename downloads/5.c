@@ -11,7 +11,7 @@ int perimeter;      /* Variable to store the perimeter of the rectangle */
 
 int main() {
     /* Assigning values to height and width */
-    height = 7;
+    height = 8;
     width = 5;
 
     /* Calculating the perimeter of the rectangle */

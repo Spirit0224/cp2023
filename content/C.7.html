@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,11 +142,29 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Brython << <a href='Brython.html'>Previous</a> <a href='W5.html'>Next</a> >> W5<br /><h1>作業內容</h1>
-<p><!-- 程式執行 ouput 區 --></p>
-<div style="width: 100%; height: 100%;">
-<div id="kw_editor1">
-<br />Brython << <a href='Brython.html'>Previous</a> <a href='W5.html'>Next</a> >> W5</div>
+    <div id="tipue_search_content">C.6 << <a href='C.6.html'>Previous</a> <a href='C.8.html'>Next</a> >> C.8<br /><h1>C.7</h1>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int days, years, weeks;
+
+    days = 1329; // Total number of days
+
+    // Converts days to years, weeks and days
+    years = days/365; // Calculate years
+    weeks = (days % 365)/7; // Calculate weeks
+    days = days - ((years*365) + (weeks*7)); // Calculate remaining days
+
+    // Print the results
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d \n", days);
+
+    return 0;
+}</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194108796734296116/image.png"/></p>
+<br />C.6 << <a href='C.6.html'>Previous</a> <a href='C.8.html'>Next</a> >> C.8</div>
         
     <!-- footer -->
       <div class="container">
