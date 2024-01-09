@@ -1609,4 +1609,100 @@ result = 3.14159 * (double)2 * r;
 return ( result );
 }</pre>
 <p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194140358209196133/image.png"/></p>
+<h2>4.</h2>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+/* read and display a number */
+int main () {
+ char c;
+ printf("Enter character: ");
+ c = getchar(); /* read the character in */
+ printf("Character entered: ");
+ putchar(c); /* write the character */
+ return(0);
+}
+</pre>
+<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141120721072218/image.png"/>
+<h2>5.</h2>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+printf("%d\n", 1 &amp;&amp; 3 );
+printf("%d\n", 0 &amp;&amp; 0 );
+printf("%d\n", 2 &amp;&amp; 2 );
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141422375424150/image.png"/>
+<h2>6.</h2>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+int a;
+a = 3;
+printf("%d\n", !a );
+a = 0;
+printf("%d\n", !a );
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141607532953660/image.png"/>
+<h2>7.</h2>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 1;
+int A = 8;
+int b = 2, c;
+c = A - a + b;
+/* 輸出 a, A, b, c 到螢幕 */
+printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
+return 0;
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141800986857583/image.png"/>
+<h2>8.</h2>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+char x, y;
+x = 'a';
+y = (char)97;
+/* 輸出 x, y, x, 最後一個是以 ASCII 值顯示 y */
+printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
+return 0;
+}
+</pre>
+<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194142059938984038/image.png"/>
+<h2>9.</h2>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194142382153814066/image.png"/>
+<h2>10.</h2>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}
+</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194142570419339424/image.png"/></p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
