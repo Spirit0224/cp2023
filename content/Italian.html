@@ -142,9 +142,48 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W12 << <a href='W12.html'>Previous</a> <a href='W15.html'>Next</a> >> W15<br /><h1>W13</h1>
-<p _msthash="355" _msttexthash="2569663109">這學期的計算機程式學了倉儲的運用及Python跟C語言的簡單用法,這學期還用到了用C語言繪製國旗。讓我知道程式語言不單僅僅是寫程式還可以繪製圖片。學習程式對於我們未來工作很有幫助。我們得CNC也要用到程式。所以我們必須讓機械與繪圖與程式結合。</p>
-<br />W12 << <a href='W12.html'>Previous</a> <a href='W15.html'>Next</a> >> W15</div>
+    <div id="tipue_search_content">世界國旗 << <a href='世界國旗.html'>Previous</a> <br /><h1>Italian</h1>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+
+int main() {
+    int width = 300;  // 宽度
+    int height = 200; // 高度
+
+    gdImagePtr image = gdImageCreateTrueColor(width, height);
+
+    if (image == NULL) {
+        printf("Failed to create image.\n");
+        return 1;
+    }
+
+    // 确定颜色索引
+    int green = gdImageColorAllocate(image, 0, 128, 0);
+    int white = gdImageColorAllocate(image, 255, 255, 255);
+    int red = gdImageColorAllocate(image, 255, 0, 0);
+
+    // 填充颜色
+    gdImageFilledRectangle(image, 0, 0, width / 3, height, green);
+    gdImageFilledRectangle(image, width / 3, 0, (width / 3) * 2, height, white);
+    gdImageFilledRectangle(image, (width / 3) * 2, 0, width, height, red);
+
+    FILE *outputFile;
+    outputFile = fopen("./../images/italian_flag.png", "wb");
+
+    if (outputFile == NULL) {
+        printf("Failed to open file for writing.\n");
+        return 1;
+    }
+
+    gdImagePng(image, outputFile);
+    fclose(outputFile);
+
+    gdImageDestroy(image);
+
+    return 0;
+}</pre>
+<p><img alt="" height="267" src="./../images/italian_flag.png" width="400"/></p>
+<script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script><br />世界國旗 << <a href='世界國旗.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
