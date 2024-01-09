@@ -1590,4 +1590,23 @@ printf("%d \n", ~a ); /* A 的補數運算 */
 }
 </pre>
 <p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194139380856655933/image.png"/></p>
+<h2>3.</h2>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+float circle( int r ); /* 宣告 circle 的 prototype */
+void main()
+{
+float answer;
+answer = circle(8);
+printf( " 圓周長度是 %f", answer );
+}
+/* ====================
+ circle 函數, 計算 circle 的圓周長
+==================== */
+float circle( int r )
+{
+float result;
+result = 3.14159 * (double)2 * r;
+return ( result );
+}</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194140358209196133/image.png"/></p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
