@@ -1562,6 +1562,43 @@ int main() {
     return 0;
 }</pre>
 <p><img alt="" height="267" src="/images/italian_flag.png" width="400"/></p>
+<h2>Ukraine</h2>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+
+#define WIDTH 600
+#define HEIGHT 400
+#define YELLOW 0xFFD100  // Yellow color
+#define BLUE 0x0057A6    // Blue color
+
+void drawUkraineFlag() {
+    gdImagePtr im;
+    FILE *output;
+
+    im = gdImageCreateTrueColor(WIDTH, HEIGHT);
+    output = fopen("ukraine_flag.png", "wb");
+
+    // Allocate yellow and blue colors
+    int yellowIndex = gdImageColorAllocate(im, (YELLOW &gt;&gt; 16) &amp; 0xFF, (YELLOW &gt;&gt; 8) &amp; 0xFF, YELLOW &amp; 0xFF);
+    int blueIndex = gdImageColorAllocate(im, (BLUE &gt;&gt; 16) &amp; 0xFF, (BLUE &gt;&gt; 8) &amp; 0xFF, BLUE &amp; 0xFF);
+
+    // Draw blue upper half
+    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT / 2 - 1, blueIndex);
+
+    // Draw yellow lower half
+    gdImageFilledRectangle(im, 0, HEIGHT / 2, WIDTH - 1, HEIGHT - 1, yellowIndex);
+
+    // Save the image
+    gdImagePng(im, output);
+    fclose(output);
+    gdImageDestroy(im);
+}
+
+int main() {
+    drawUkraineFlag();
+    return 0;
+}</pre>
+<img caption="false" height="200" src="/images/ukraine_flag.png" width="300"/>
 <h1>C_EX</h1>
 <h2>1.</h2>
 <pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
@@ -1621,7 +1658,7 @@ int main () {
  return(0);
 }
 </pre>
-<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141120721072218/image.png"/>
+<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141120721072218/image.png"/></p>
 <h2>5.</h2>
 <pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 void main()
@@ -1630,7 +1667,7 @@ printf("%d\n", 1 &amp;&amp; 3 );
 printf("%d\n", 0 &amp;&amp; 0 );
 printf("%d\n", 2 &amp;&amp; 2 );
 }</pre>
-<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141422375424150/image.png"/>
+<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141422375424150/image.png"/></p>
 <h2>6.</h2>
 <pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 void main()
@@ -1641,7 +1678,7 @@ printf("%d\n", !a );
 a = 0;
 printf("%d\n", !a );
 }</pre>
-<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141607532953660/image.png"/>
+<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141607532953660/image.png"/></p>
 <h2>7.</h2>
 <pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 int main()
@@ -1654,7 +1691,7 @@ c = A - a + b;
 printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
 return 0;
 }</pre>
-<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141800986857583/image.png"/>
+<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194141800986857583/image.png"/></p>
 <h2>8.</h2>
 <pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 int main()
@@ -1667,7 +1704,7 @@ printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
 return 0;
 }
 </pre>
-<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194142059938984038/image.png"/>
+<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194142059938984038/image.png"/></p>
 <h2>9.</h2>
 <pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
 int main()
@@ -1681,7 +1718,7 @@ printf( "%d \n", a - b );
 printf( "%d \n", a % b );
 return 0;
 }</pre>
-<img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194142382153814066/image.png"/>
+<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194142382153814066/image.png"/></p>
 <h2>10.</h2>
 <pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 int main()
