@@ -142,27 +142,54 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">C.9 << <a href='C.9.html'>Previous</a> <a href='Note.html'>Next</a> >> Note<br /><h1>C.10</h1>
+    <div id="tipue_search_content">Laos << <a href='Laos.html'>Previous</a> <a href='C_EX.html'>Next</a> >> C_EX<br /><h1>Luxembourg</h1>
 <pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#define N 10
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;
+
+void draw_luxembourg_flag(gdImagePtr img);
 
 int main() {
-  char chr;
-  printf("\n");
+    int width = 1200;
+    int height = (int)(width * 2.0 / 3.0);
 
-  // Loop through ASCII values from 65 ('A') to 122 ('z')
-  for (chr = 65; chr &lt;= 122; chr = chr + 1) {
-    // Exclude characters between 'Z' and 'a'
-    if (chr &gt; 90 &amp;&amp; chr &lt; 97)
-      continue;
+    gdImagePtr img = gdImageCreateTrueColor(width, height);
+    gdImageAlphaBlending(img, 0);
 
-    printf("[%2d-%c] ", chr, chr);
-  }
+    draw_luxembourg_flag(img);
 
-  return 0;
+    FILE *outputFile = fopen("./../images/luxembourg_flag_in_gd.png", "wb");
+    if (outputFile == NULL) {
+        fprintf(stderr, "Error opening the output file.\n");
+        return 1;
+    }
+    gdImagePngEx(img, outputFile, 9);
+    fclose(outputFile);
+    gdImageDestroy(img);
+
+    return 0;
+}
+
+void draw_luxembourg_flag(gdImagePtr img) {
+    int width = gdImageSX(img);
+    int height = gdImageSY(img);
+    int red, white, lightBlue;
+
+    red = gdImageColorAllocate(img, 208, 16, 76); // 紅色
+    white = gdImageColorAllocate(img, 255, 255, 255); // 白色
+    lightBlue = gdImageColorAllocate(img, 0, 49, 120); // 海藍色
+
+    // 上方紅色條紋
+    gdImageFilledRectangle(img, 0, 0, width, height / 3, red);
+
+    // 中間白色條紋
+    gdImageFilledRectangle(img, 0, height / 3, width, height / 3 * 2, white);
+
+    // 下方海藍色條紋
+    gdImageFilledRectangle(img, 0, height / 3 * 2, width, height, lightBlue);
 }</pre>
-<p><img src="https://cdn.discordapp.com/attachments/1158717428705005599/1194111722148081664/image.png"/></p>
-<br />C.9 << <a href='C.9.html'>Previous</a> <a href='Note.html'>Next</a> >> Note</div>
+<img caption="false" height="267" src="./../images/luxembourg_flag_in_gd.png" width="400"/>
+<br />Laos << <a href='Laos.html'>Previous</a> <a href='C_EX.html'>Next</a> >> C_EX</div>
         
     <!-- footer -->
       <div class="container">
